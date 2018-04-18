@@ -7,8 +7,8 @@ if __name__ == '__main__':
 
 	fname = sys.argv[1]
 	sys.stdout = open(sys.argv[2], 'w')
-	
-	pattern = re.compile(r'\b(if) *(.*) +then|\b(while) *(.*) +do|\b(for) *(.*) +do')
+
+	pattern = re.compile(r'\(\*.*?\*\)|\{.*?\}|\/\/.*$|\b(if) *(.*?) +then|\b(while) *(.*?) +do|\b(for) *(.*?) +do', re.DOTALL)
 
 	matches = pattern.findall(open(fname,'r').read())
 	currentMatch = ''
