@@ -1,7 +1,5 @@
 import re
 import sys
-import os
-import glob
 
 if __name__ == '__main__':
 
