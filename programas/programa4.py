@@ -4,9 +4,8 @@ import sys
 
 def programa4(texto):
 	salida = ""
-	sinCom1 = re.sub(r'\{.*?}|\(\*.*?\*\)','',texto,flags=re.DOTALL)
-	sinCom2 = re.sub(r'\/\/.*','',sinCom1)
-	return sinCom2            
+	sinCom = re.sub(r'\{.*?}|\(\*.*?\*\)|\/\/[^\n]*','',texto,flags=re.DOTALL)
+	return sinCom            
 
 if __name__ == '__main__':
     archivo_entrada = sys.argv[1]
